@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Klyron | Testing Agent",
+  description: "AI-powered test case and Playwright automation script generator.",
+};
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 
