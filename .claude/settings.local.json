@@ -6,7 +6,8 @@
       "Bash(npm run *)",
       "Bash(npx playwright *)",
       "Bash(Copy-Item *)",
-      "PowerShell(Copy-Item *)"
+      "PowerShell(Copy-Item *)",
+      "Bash(Test-Path *)"
     ]
   }
 }
