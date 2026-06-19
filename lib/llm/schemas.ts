@@ -28,6 +28,128 @@ export const ScriptOutputSchema = z.object({
 
 export type ScriptOutput = z.infer<typeof ScriptOutputSchema>;
 
+// ── Test data schema ──────────────────────────────────────────────────────────
+
+export const TestDataSetSchema = z.object({
+  label: z.string(),
+  category: z.enum(["valid", "invalid", "boundary", "security"]),
+  values: z.record(z.string(), z.string()),
+});
+
+export const TestDataListSchema = z.object({
+  datasets: z.array(TestDataSetSchema),
+});
+
+export type TestDataSetInput = z.infer<typeof TestDataSetSchema>;
+
+export const testDataListJsonSchema = {
+  name: "test_data_list",
+  strict: true,
+  schema: {
+    type: "object",
+    properties: {
+      datasets: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            label: { type: "string" },
+            category: { type: "string", enum: ["valid", "invalid", "boundary", "security"] },
+            values: {
+              type: "object",
+              additionalProperties: { type: "string" },
+            },
+          },
+          required: ["label", "category", "values"],
+          additionalProperties: false,
+        },
+      },
+    },
+    required: ["datasets"],
+    additionalProperties: false,
+  },
+} as const;
+
+// ── Validation result schema ──────────────────────────────────────────────────
+
+export const ValidationResultSchema = z.object({
+  duplicateGroups: z.array(
+    z.object({
+      indices: z.array(z.number()),
+      reason: z.string(),
+    })
+  ),
+  coverageGaps: z.array(
+    z.object({
+      area: z.string(),
+      suggestion: z.string(),
+    })
+  ),
+  improvements: z.array(
+    z.object({
+      index: z.number(),
+      suggestion: z.string(),
+    })
+  ),
+  overallCoverage: z.enum(["Excellent", "Good", "Moderate", "Poor"]),
+  summary: z.string(),
+});
+
+export type ValidationResult = z.infer<typeof ValidationResultSchema>;
+
+export const validationResultJsonSchema = {
+  name: "validation_result",
+  strict: true,
+  schema: {
+    type: "object",
+    properties: {
+      duplicateGroups: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            indices: { type: "array", items: { type: "number" } },
+            reason: { type: "string" },
+          },
+          required: ["indices", "reason"],
+          additionalProperties: false,
+        },
+      },
+      coverageGaps: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            area: { type: "string" },
+            suggestion: { type: "string" },
+          },
+          required: ["area", "suggestion"],
+          additionalProperties: false,
+        },
+      },
+      improvements: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            index: { type: "number" },
+            suggestion: { type: "string" },
+          },
+          required: ["index", "suggestion"],
+          additionalProperties: false,
+        },
+      },
+      overallCoverage: {
+        type: "string",
+        enum: ["Excellent", "Good", "Moderate", "Poor"],
+      },
+      summary: { type: "string" },
+    },
+    required: ["duplicateGroups", "coverageGaps", "improvements", "overallCoverage", "summary"],
+    additionalProperties: false,
+  },
+} as const;
+
 // ── JSON Schema representations (for OpenAI structured outputs) ───────────────
 
 export const testCaseListJsonSchema = {

@@ -23,6 +23,7 @@ export interface CrawlOptions {
   maxDepth?: number;
   delayMs?: number;
   onProgress?: (event: CrawlProgressEvent) => void;
+  credentials?: { username: string; password: string };
 }
 
 export class CrawlError extends Error {
@@ -46,6 +47,59 @@ export class CrawlError extends Error {
 const DEFAULT_MAX_PAGES = 15;
 const DEFAULT_MAX_DEPTH = 3;
 const DEFAULT_DELAY_MS = 800;
+
+async function tryLogin(
+  page: import("playwright-core").Page,
+  credentials: { username: string; password: string }
+): Promise<boolean> {
+  const usernameSelectors = [
+    'input[name="username"]',
+    'input[name="email"]',
+    'input[type="email"]',
+    'input[name="user"]',
+    '#username',
+    '#email',
+    'input[autocomplete="username"]',
+    'input[autocomplete="email"]',
+  ];
+  const passwordSelector = 'input[type="password"]';
+
+  let usernameLocator: import("playwright-core").Locator | null = null;
+  for (const sel of usernameSelectors) {
+    try {
+      const loc = page.locator(sel).first();
+      const visible = await loc.isVisible({ timeout: 1500 }).catch(() => false);
+      if (visible) { usernameLocator = loc; break; }
+    } catch { continue; }
+  }
+  if (!usernameLocator) return false;
+
+  const passwordLocator = page.locator(passwordSelector).first();
+  const passwordVisible = await passwordLocator.isVisible({ timeout: 1500 }).catch(() => false);
+  if (!passwordVisible) return false;
+
+  await usernameLocator.fill(credentials.username);
+  await passwordLocator.fill(credentials.password);
+
+  const submitSelectors = [
+    'button[type="submit"]',
+    'input[type="submit"]',
+    'button:has-text("Login")',
+    'button:has-text("Sign in")',
+    'button:has-text("Log in")',
+  ];
+  for (const sel of submitSelectors) {
+    try {
+      const loc = page.locator(sel).first();
+      const visible = await loc.isVisible({ timeout: 1000 }).catch(() => false);
+      if (visible) { await loc.click(); await page.waitForTimeout(2500); return true; }
+    } catch { continue; }
+  }
+
+  await passwordLocator.press("Enter");
+  await page.waitForTimeout(2500);
+  return true;
+}
 
 function isSameOrigin(base: string, target: string): boolean {
   try {
@@ -200,6 +254,7 @@ export async function crawlSite(
     maxDepth = DEFAULT_MAX_DEPTH,
     delayMs = DEFAULT_DELAY_MS,
     onProgress,
+    credentials,
   } = options;
 
   const emit = (event: CrawlProgressEvent) => onProgress?.(event);
@@ -271,6 +326,18 @@ export async function crawlSite(
     } catch (err) {
       if (err instanceof CrawlError) throw err;
       throw classifyPlaywrightError(err);
+    }
+
+    // Attempt login if credentials provided
+    if (credentials) {
+      emit({ type: "thinking", message: "Credentials provided — attempting login…" });
+      const loggedIn = await tryLogin(page, credentials);
+      emit({
+        type: loggedIn ? "action" : "thinking",
+        message: loggedIn
+          ? "Login succeeded — continuing crawl as authenticated user."
+          : "Login form not found on root page — continuing without authentication.",
+      });
     }
 
     // Root loaded — extract and mark visited

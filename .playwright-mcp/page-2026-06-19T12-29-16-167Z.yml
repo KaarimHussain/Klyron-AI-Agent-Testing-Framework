@@ -1,0 +1,402 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e130]:
+    - banner [ref=e133]:
+      - generic [ref=e134]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e135] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e136]
+          - generic [ref=e137]: Klyron | Testing Agent
+        - generic [ref=e138]: /
+        - generic [ref=e140]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: /
+            - img
+          - generic [ref=e142]: Basic Testing
+          - generic [ref=e143]: Ready
+        - generic [ref=e144]:
+          - button "Delete project" [ref=e145]:
+            - img
+          - link "Settings" [ref=e146] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e147]
+            - generic [ref=e150]: Settings
+          - button "Toggle theme" [ref=e151]:
+            - img
+    - main [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - img [ref=e156]
+          - generic [ref=e159]:
+            - paragraph [ref=e160]: "1"
+            - paragraph [ref=e161]: Pages crawled
+        - generic [ref=e162]:
+          - img [ref=e164]
+          - generic [ref=e167]:
+            - paragraph [ref=e168]: "14"
+            - paragraph [ref=e169]: 0 approved
+        - generic [ref=e170]:
+          - img [ref=e172]
+          - generic [ref=e176]:
+            - paragraph [ref=e177]: "9"
+            - paragraph [ref=e178]: Scripts
+      - generic [ref=e179]:
+        - button "Generate Test Cases" [ref=e180]:
+          - img
+          - text: Generate Test Cases
+        - button "Generate All Scripts" [ref=e181]:
+          - img
+          - text: Generate All Scripts
+        - button "Discover Edge Cases" [ref=e182]:
+          - img
+          - text: Discover Edge Cases
+        - button "Download Framework" [ref=e183]:
+          - img
+          - text: Download Framework
+        - button "Scripts only" [ref=e184]:
+          - img
+          - text: Scripts only
+        - button "HTML Report" [ref=e185]:
+          - img
+          - text: HTML Report
+        - button "Excel Report" [ref=e186]:
+          - img
+          - text: Excel Report
+      - generic [ref=e187]:
+        - tablist [ref=e188]:
+          - tab "Site Map 1" [ref=e189]:
+            - img
+            - text: Site Map
+            - generic [ref=e190]: "1"
+          - tab "Test Cases 14" [selected] [ref=e191]:
+            - img
+            - text: Test Cases
+            - generic [ref=e192]: "14"
+          - tab "Scripts 9" [ref=e193]:
+            - img
+            - text: Scripts
+            - generic [ref=e194]: "9"
+          - tab "Execution" [ref=e195]:
+            - img
+            - text: Execution
+        - tabpanel "Test Cases 14" [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - img [ref=e220]
+                - heading "AI Validation" [level=3] [ref=e223]
+              - button "Validate & Improve" [ref=e224]:
+                - img
+                - text: Validate & Improve
+            - paragraph [ref=e225]: Run validation to detect duplicates, coverage gaps, and get improvement suggestions.
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - heading "Test Cases" [level=3] [ref=e228]
+              - generic [ref=e229]:
+                - generic [ref=e230]:
+                  - img [ref=e231]
+                  - text: 0 approved
+                - generic [ref=e234]: 14 draft
+            - generic [ref=e235]:
+              - paragraph [ref=e236]: Click a title to see details · Click the status pill to approve/draft · Hover a row for actions
+              - table [ref=e239]:
+                - rowgroup [ref=e240]:
+                  - row "Title Module Type Priority Status Actions" [ref=e241]:
+                    - columnheader "Title" [ref=e242]
+                    - columnheader "Module" [ref=e243]:
+                      - button "Module" [ref=e244]:
+                        - text: Module
+                        - img [ref=e245]
+                    - columnheader "Type" [ref=e248]:
+                      - button "Type" [ref=e249]:
+                        - text: Type
+                        - img [ref=e250]
+                    - columnheader "Priority" [ref=e253]:
+                      - button "Priority" [ref=e254]:
+                        - text: Priority
+                        - img [ref=e255]
+                    - columnheader "Status" [ref=e258]
+                    - columnheader "Actions" [ref=e259]
+                - rowgroup [ref=e260]:
+                  - row "Password field masks input Authentication ui medium Draft" [ref=e261]:
+                    - cell "Password field masks input" [ref=e262]:
+                      - button "Password field masks input" [ref=e263]
+                    - cell "Authentication" [ref=e264]
+                    - cell "ui" [ref=e265]:
+                      - generic [ref=e266]: ui
+                    - cell "medium" [ref=e267]:
+                      - generic [ref=e268]: medium
+                    - cell "Draft" [ref=e269]:
+                      - button "Draft" [ref=e270] [cursor=pointer]:
+                        - img [ref=e271]
+                        - text: Draft
+                    - cell [ref=e274]:
+                      - generic [ref=e275]:
+                        - button [ref=e276]:
+                          - img
+                        - button "Generate script" [ref=e277]:
+                          - img
+                        - button [ref=e278]:
+                          - img
+                  - row "Login fails with empty username Authentication negative high Draft" [ref=e279]:
+                    - cell "Login fails with empty username" [ref=e280]:
+                      - button "Login fails with empty username" [ref=e281]
+                    - cell "Authentication" [ref=e282]
+                    - cell "negative" [ref=e283]:
+                      - generic [ref=e284]: negative
+                    - cell "high" [ref=e285]:
+                      - generic [ref=e286]: high
+                    - cell "Draft" [ref=e287]:
+                      - button "Draft" [ref=e288] [cursor=pointer]:
+                        - img [ref=e289]
+                        - text: Draft
+                    - cell [ref=e292]:
+                      - generic [ref=e293]:
+                        - button [ref=e294]:
+                          - img
+                        - button "Generate script" [ref=e295]:
+                          - img
+                        - button [ref=e296]:
+                          - img
+                  - row "Login with keyboard navigation Authentication functional medium Draft" [ref=e297]:
+                    - cell "Login with keyboard navigation" [ref=e298]:
+                      - button "Login with keyboard navigation" [ref=e299]
+                    - cell "Authentication" [ref=e300]
+                    - cell "functional" [ref=e301]:
+                      - generic [ref=e302]: functional
+                    - cell "medium" [ref=e303]:
+                      - generic [ref=e304]: medium
+                    - cell "Draft" [ref=e305]:
+                      - button "Draft" [ref=e306] [cursor=pointer]:
+                        - img [ref=e307]
+                        - text: Draft
+                    - cell [ref=e310]:
+                      - generic [ref=e311]:
+                        - button [ref=e312]:
+                          - img
+                        - button "Generate script" [ref=e313]:
+                          - img
+                        - button [ref=e314]:
+                          - img
+                  - row "Login form fields have proper labels Authentication ui medium Draft" [ref=e315]:
+                    - cell "Login form fields have proper labels" [ref=e316]:
+                      - button "Login form fields have proper labels" [ref=e317]
+                    - cell "Authentication" [ref=e318]
+                    - cell "ui" [ref=e319]:
+                      - generic [ref=e320]: ui
+                    - cell "medium" [ref=e321]:
+                      - generic [ref=e322]: medium
+                    - cell "Draft" [ref=e323]:
+                      - button "Draft" [ref=e324] [cursor=pointer]:
+                        - img [ref=e325]
+                        - text: Draft
+                    - cell [ref=e328]:
+                      - generic [ref=e329]:
+                        - button [ref=e330]:
+                          - img
+                        - button "Generate script" [ref=e331]:
+                          - img
+                        - button [ref=e332]:
+                          - img
+                  - row "Login button is disabled when both fields are empty Authentication ui low Draft" [ref=e333]:
+                    - cell "Login button is disabled when both fields are empty" [ref=e334]:
+                      - button "Login button is disabled when both fields are empty" [ref=e335]
+                    - cell "Authentication" [ref=e336]
+                    - cell "ui" [ref=e337]:
+                      - generic [ref=e338]: ui
+                    - cell "low" [ref=e339]:
+                      - generic [ref=e340]: low
+                    - cell "Draft" [ref=e341]:
+                      - button "Draft" [ref=e342] [cursor=pointer]:
+                        - img [ref=e343]
+                        - text: Draft
+                    - cell [ref=e346]:
+                      - generic [ref=e347]:
+                        - button [ref=e348]:
+                          - img
+                        - button "Generate script" [ref=e349]:
+                          - img
+                        - button [ref=e350]:
+                          - img
+                  - row "Login fails with empty password Authentication negative high Draft" [ref=e351]:
+                    - cell "Login fails with empty password" [ref=e352]:
+                      - button "Login fails with empty password" [ref=e353]
+                    - cell "Authentication" [ref=e354]
+                    - cell "negative" [ref=e355]:
+                      - generic [ref=e356]: negative
+                    - cell "high" [ref=e357]:
+                      - generic [ref=e358]: high
+                    - cell "Draft" [ref=e359]:
+                      - button "Draft" [ref=e360] [cursor=pointer]:
+                        - img [ref=e361]
+                        - text: Draft
+                    - cell [ref=e364]:
+                      - generic [ref=e365]:
+                        - button [ref=e366]:
+                          - img
+                        - button "Generate script" [ref=e367]:
+                          - img
+                        - button [ref=e368]:
+                          - img
+                  - row "Login button has proper hover state Authentication ui low Draft" [ref=e369]:
+                    - cell "Login button has proper hover state" [ref=e370]:
+                      - button "Login button has proper hover state" [ref=e371]
+                    - cell "Authentication" [ref=e372]
+                    - cell "ui" [ref=e373]:
+                      - generic [ref=e374]: ui
+                    - cell "low" [ref=e375]:
+                      - generic [ref=e376]: low
+                    - cell "Draft" [ref=e377]:
+                      - button "Draft" [ref=e378] [cursor=pointer]:
+                        - img [ref=e379]
+                        - text: Draft
+                    - cell [ref=e382]:
+                      - generic [ref=e383]:
+                        - button [ref=e384]:
+                          - img
+                        - button "Generate script" [ref=e385]:
+                          - img
+                        - button [ref=e386]:
+                          - img
+                  - row "Successful login with valid credentials Authentication functional high Draft" [ref=e387]:
+                    - cell "Successful login with valid credentials" [ref=e388]:
+                      - button "Successful login with valid credentials" [ref=e389]
+                    - cell "Authentication" [ref=e390]
+                    - cell "functional" [ref=e391]:
+                      - generic [ref=e392]: functional
+                    - cell "high" [ref=e393]:
+                      - generic [ref=e394]: high
+                    - cell "Draft" [ref=e395]:
+                      - button "Draft" [ref=e396] [cursor=pointer]:
+                        - img [ref=e397]
+                        - text: Draft
+                    - cell [ref=e400]:
+                      - generic [ref=e401]:
+                        - button [ref=e402]:
+                          - img
+                        - button "Generate script" [ref=e403]:
+                          - img
+                        - button [ref=e404]:
+                          - img
+                  - row "Login form persists after page refresh Authentication functional low Draft" [ref=e405]:
+                    - cell "Login form persists after page refresh" [ref=e406]:
+                      - button "Login form persists after page refresh" [ref=e407]
+                    - cell "Authentication" [ref=e408]
+                    - cell "functional" [ref=e409]:
+                      - generic [ref=e410]: functional
+                    - cell "low" [ref=e411]:
+                      - generic [ref=e412]: low
+                    - cell "Draft" [ref=e413]:
+                      - button "Draft" [ref=e414] [cursor=pointer]:
+                        - img [ref=e415]
+                        - text: Draft
+                    - cell [ref=e418]:
+                      - generic [ref=e419]:
+                        - button [ref=e420]:
+                          - img
+                        - button "Generate script" [ref=e421]:
+                          - img
+                        - button [ref=e422]:
+                          - img
+                  - row "Login attempt with maximum length credentials Authentication edge-case low Draft" [ref=e423]:
+                    - cell "Login attempt with maximum length credentials" [ref=e424]:
+                      - button "Login attempt with maximum length credentials" [ref=e425]
+                    - cell "Authentication" [ref=e426]
+                    - cell "edge-case" [ref=e427]:
+                      - generic [ref=e428]: edge-case
+                    - cell "low" [ref=e429]:
+                      - generic [ref=e430]: low
+                    - cell "Draft" [ref=e431]:
+                      - button "Draft" [ref=e432] [cursor=pointer]:
+                        - img [ref=e433]
+                        - text: Draft
+                    - cell [ref=e436]:
+                      - generic [ref=e437]:
+                        - button [ref=e438]:
+                          - img
+                        - button "Generate script" [ref=e439]:
+                          - img
+                        - button [ref=e440]:
+                          - img
+                  - row "Multiple rapid login attempts Authentication edge-case low Draft" [ref=e441]:
+                    - cell "Multiple rapid login attempts" [ref=e442]:
+                      - button "Multiple rapid login attempts" [ref=e443]
+                    - cell "Authentication" [ref=e444]
+                    - cell "edge-case" [ref=e445]:
+                      - generic [ref=e446]: edge-case
+                    - cell "low" [ref=e447]:
+                      - generic [ref=e448]: low
+                    - cell "Draft" [ref=e449]:
+                      - button "Draft" [ref=e450] [cursor=pointer]:
+                        - img [ref=e451]
+                        - text: Draft
+                    - cell [ref=e454]:
+                      - generic [ref=e455]:
+                        - button [ref=e456]:
+                          - img
+                        - button "Generate script" [ref=e457]:
+                          - img
+                        - button [ref=e458]:
+                          - img
+                  - row "Login fails with invalid credentials Authentication negative medium Draft" [ref=e459]:
+                    - cell "Login fails with invalid credentials" [ref=e460]:
+                      - button "Login fails with invalid credentials" [ref=e461]
+                    - cell "Authentication" [ref=e462]
+                    - cell "negative" [ref=e463]:
+                      - generic [ref=e464]: negative
+                    - cell "medium" [ref=e465]:
+                      - generic [ref=e466]: medium
+                    - cell "Draft" [ref=e467]:
+                      - button "Draft" [ref=e468] [cursor=pointer]:
+                        - img [ref=e469]
+                        - text: Draft
+                    - cell [ref=e472]:
+                      - generic [ref=e473]:
+                        - button [ref=e474]:
+                          - img
+                        - button "Generate script" [ref=e475]:
+                          - img
+                        - button [ref=e476]:
+                          - img
+                  - row "Login attempt with special characters in credentials Authentication edge-case medium Draft" [ref=e477]:
+                    - cell "Login attempt with special characters in credentials" [ref=e478]:
+                      - button "Login attempt with special characters in credentials" [ref=e479]
+                    - cell "Authentication" [ref=e480]
+                    - cell "edge-case" [ref=e481]:
+                      - generic [ref=e482]: edge-case
+                    - cell "medium" [ref=e483]:
+                      - generic [ref=e484]: medium
+                    - cell "Draft" [ref=e485]:
+                      - button "Draft" [ref=e486] [cursor=pointer]:
+                        - img [ref=e487]
+                        - text: Draft
+                    - cell [ref=e490]:
+                      - generic [ref=e491]:
+                        - button [ref=e492]:
+                          - img
+                        - button "Generate script" [ref=e493]:
+                          - img
+                        - button [ref=e494]:
+                          - img
+                  - row "Login form responsive layout Authentication ui medium Draft" [ref=e495]:
+                    - cell "Login form responsive layout" [ref=e496]:
+                      - button "Login form responsive layout" [ref=e497]
+                    - cell "Authentication" [ref=e498]
+                    - cell "ui" [ref=e499]:
+                      - generic [ref=e500]: ui
+                    - cell "medium" [ref=e501]:
+                      - generic [ref=e502]: medium
+                    - cell "Draft" [ref=e503]:
+                      - button "Draft" [ref=e504] [cursor=pointer]:
+                        - img [ref=e505]
+                        - text: Draft
+                    - cell [ref=e508]:
+                      - generic [ref=e509]:
+                        - button [ref=e510]:
+                          - img
+                        - button "Generate script" [ref=e511]:
+                          - img
+                        - button [ref=e512]:
+                          - img

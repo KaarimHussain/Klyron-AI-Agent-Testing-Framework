@@ -1,8 +1,15 @@
 import type { CrawledPage } from "@/lib/browser/crawler";
 
+export interface TestCasePromptContext {
+  userStory?: string | null;
+  requirementDoc?: string | null;
+  apiDoc?: string | null;
+}
+
 export function buildTestCasePrompt(
   pages: CrawledPage[],
-  scopeNotes: string | null
+  scopeNotes: string | null,
+  context?: TestCasePromptContext
 ): string {
   const siteMapSummary = pages
     .map((p) => {
@@ -20,14 +27,21 @@ export function buildTestCasePrompt(
     })
     .join("\n\n---\n\n");
 
+  const contextBlocks: string[] = [];
+  if (context?.userStory) contextBlocks.push(`USER STORY:\n${context.userStory}`);
+  if (context?.requirementDoc) contextBlocks.push(`REQUIREMENTS:\n${context.requirementDoc}`);
+  if (context?.apiDoc) contextBlocks.push(`API DOCUMENTATION:\n${context.apiDoc}`);
+  const contextSection = contextBlocks.length > 0
+    ? `\nADDITIONAL CONTEXT:\n${contextBlocks.join("\n\n")}\n`
+    : "";
+
   return `You are a senior QA engineer. Based on the crawled site map below, generate comprehensive manual test cases covering:
 - Functional flows (forms, navigation, core features)
 - UI/layout checks (critical visual elements)
 - Negative tests (empty inputs, invalid data, error states)
 - Edge cases (boundary values, unusual sequences)
 
-${scopeNotes ? `Focus area: ${scopeNotes}\n` : ""}
-
+${scopeNotes ? `Focus area: ${scopeNotes}\n` : ""}${contextSection}
 SITE MAP:
 ${siteMapSummary}
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Settings } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
 interface NavbarProps {
@@ -35,6 +36,13 @@ export function Navbar({ left, right }: NavbarProps) {
 
         <div className="ml-auto flex items-center gap-1">
           {right}
+          <Link
+            href="/settings"
+            className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+          >
+            <Settings className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">Settings</span>
+          </Link>
           <ThemeToggle />
         </div>
       </div>

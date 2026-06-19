@@ -1,0 +1,95 @@
+AI-Powered QA Test Design & Playwright Automation Agent - Requirements
+
+Objective
+Build an AI agent that can analyze any website functionality, generate comprehensive manual test cases covering all possible edge cases, create Playwright automation scripts in JavaScript, and execute the automated tests against a provided website URL.
+
+Functional Requirements
+
+1. Website Analysis
+- Accept a website URL as input.
+- Crawl and analyze the target webpage.
+- Identify forms, buttons, links, dropdowns, tables, modals, navigation menus, search functionality, file upload/download controls, authentication flows, and API interactions.
+- Generate a structured inventory of discovered elements and functionalities.
+
+2. Manual Test Case Generation
+- Generate complete manual test cases for each identified functionality.
+- Cover positive, negative, boundary, validation, security, accessibility, usability, cross-browser, and responsive testing scenarios.
+- Include Test Case ID, Title, Preconditions, Steps, Test Data, Expected Results, Priority, Severity, and Requirement Mapping.
+
+3. Edge Case Discovery Engine
+- Automatically identify edge cases including empty fields, null values, special characters, maximum/minimum lengths, Unicode characters, SQL Injection, XSS, session expiration, network interruptions, duplicate submissions, browser refresh scenarios, concurrent user actions, invalid URLs, and permission-based access.
+
+4. Test Data Generation
+- Generate realistic and invalid test datasets automatically.
+
+5. Automation Script Generation
+- Convert manual test cases into Playwright JavaScript automation scripts.
+- Generate Page Objects, Test Files, Utility Functions, Test Data Files, and Configuration Files.
+
+6. Framework Generation
+- Automatically create a complete Playwright framework using POM, reporting, logging, screenshots, retries, and configuration management.
+
+7. Test Execution
+- Execute generated Playwright scripts on Chrome, Firefox, Edge, and Safari (where supported).
+- Support single test, suite execution, and regression execution.
+
+8. Result Analysis
+- Capture pass/fail status, screenshots, videos, logs, browser console errors, and network errors.
+- Generate execution summaries.
+
+9. Defect Detection
+- Automatically identify UI defects, functional defects, broken links, validation issues, JavaScript errors, and performance bottlenecks.
+- Generate defect reports.
+
+10. Reporting
+- Generate HTML, PDF, and Excel reports.
+- Include execution results, screenshots, defects, and coverage metrics.
+
+11. AI Validation Layer
+- Review generated test cases.
+- Remove duplicates.
+- Improve coverage.
+- Suggest missing edge cases.
+- Validate automation scripts before execution.
+
+12. User Inputs
+- Website URL
+- Functionality Name (Optional)
+- User Story (Optional)
+- Requirement Document (Optional)
+- API Documentation (Optional)
+- Credentials (Optional)
+
+Non-Functional Requirements
+
+Performance
+- Generate test cases within 2 minutes for standard pages.
+- Generate Playwright scripts within 5 minutes.
+
+Scalability
+- Support websites with 500+ pages.
+- Support parallel execution.
+
+Security
+- Secure credential storage.
+- Mask sensitive data in logs and reports.
+
+Reliability
+- Self-healing locators.
+- Automatic retry mechanisms.
+- Robust error handling.
+
+Expected Outputs
+- Website Analysis Report
+- Complete Manual Test Cases
+- Edge Case Test Suite
+- Playwright JavaScript Automation Framework
+- Executable Test Scripts
+- Execution Reports
+- Defect Reports
+- Coverage Report
+- Testing Recommendations
+
+Workflow
+Input URL ? Website Analysis ? Functionality Identification ? Edge Case Discovery ? Manual Test Case Generation ? Playwright Script Generation ? Framework Creation ? Test Execution ? Result Analysis ? Defect Detection ? Final Report Generation
+

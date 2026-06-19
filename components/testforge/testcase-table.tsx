@@ -20,8 +20,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Loader2, Pencil, Trash2, Check, X, Code, ArrowUpDown, CheckCircle2, Clock } from "lucide-react";
-import type { TestCase } from "@/lib/db/schema";
+import { Loader2, Pencil, Trash2, Check, X, Code, ArrowUpDown, CheckCircle2, Clock, Database } from "lucide-react";
+import type { TestCase, TestDataSet } from "@/lib/db/schema";
 import { cn } from "@/lib/utils";
 
 interface TestCaseTableProps {
@@ -31,7 +31,16 @@ interface TestCaseTableProps {
   onDelete: (id: string) => void;
   onGenerateScript: (tc: TestCase) => void;
   generatingIds: Set<string>;
+  onGenerateTestData?: (tc: TestCase) => void;
+  generatingDataIds?: Set<string>;
 }
+
+const categoryColor: Record<string, string> = {
+  valid: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+  invalid: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+  boundary: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+  security: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
+};
 
 const priorityColor: Record<string, string> = {
   high: "bg-red-100 text-red-700 border-red-200",
@@ -52,6 +61,8 @@ export function TestCaseTable({
   onDelete,
   onGenerateScript,
   generatingIds,
+  onGenerateTestData,
+  generatingDataIds = new Set(),
 }: TestCaseTableProps) {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editValues, setEditValues] = useState<Partial<TestCase>>({});
@@ -345,11 +356,11 @@ export function TestCaseTable({
 
       <Dialog open={!!detailTc} onOpenChange={() => setDetailTc(null)}>
         {detailTc && (
-          <DialogContent className="max-w-lg">
+          <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-base">{detailTc.title}</DialogTitle>
             </DialogHeader>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-4 text-sm">
               <div className="flex gap-2">
                 <Badge className={cn("text-xs border", typeColor[detailTc.type])} variant="outline">
                   {detailTc.type}
@@ -363,12 +374,12 @@ export function TestCaseTable({
               </div>
               {detailTc.preconditions && (
                 <div>
-                  <p className="font-medium text-muted-foreground">Preconditions</p>
+                  <p className="mb-1 font-medium text-muted-foreground">Preconditions</p>
                   <p>{detailTc.preconditions}</p>
                 </div>
               )}
               <div>
-                <p className="font-medium text-muted-foreground">Steps</p>
+                <p className="mb-1 font-medium text-muted-foreground">Steps</p>
                 <ol className="ml-4 list-decimal space-y-1">
                   {(detailTc.steps as string[]).map((s, i) => (
                     <li key={i}>{s}</li>
@@ -376,8 +387,59 @@ export function TestCaseTable({
                 </ol>
               </div>
               <div>
-                <p className="font-medium text-muted-foreground">Expected Result</p>
+                <p className="mb-1 font-medium text-muted-foreground">Expected Result</p>
                 <p>{detailTc.expectedResult}</p>
+              </div>
+
+              {/* Test Data */}
+              <div>
+                <div className="mb-2 flex items-center justify-between">
+                  <p className="font-medium text-muted-foreground">Test Data</p>
+                  {onGenerateTestData && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="h-6 text-[10px] gap-1"
+                      disabled={generatingDataIds.has(detailTc.id)}
+                      onClick={() => onGenerateTestData(detailTc)}
+                    >
+                      {generatingDataIds.has(detailTc.id) ? (
+                        <Loader2 className="h-3 w-3 animate-spin" />
+                      ) : (
+                        <Database className="h-3 w-3" />
+                      )}
+                      {(detailTc.testData as TestDataSet[] | null)?.length
+                        ? "Regenerate"
+                        : "Generate Data"}
+                    </Button>
+                  )}
+                </div>
+                {(detailTc.testData as TestDataSet[] | null)?.length ? (
+                  <div className="space-y-2">
+                    {(detailTc.testData as TestDataSet[]).map((ds, i) => (
+                      <div key={i} className="rounded-lg border p-2.5">
+                        <div className="mb-1.5 flex items-center gap-2">
+                          <span className={cn("rounded-full px-2 py-0.5 text-[10px] font-medium", categoryColor[ds.category])}>
+                            {ds.category}
+                          </span>
+                          <span className="text-xs font-medium">{ds.label}</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-1">
+                          {Object.entries(ds.values).map(([field, value]) => (
+                            <div key={field} className="text-[10px]">
+                              <span className="text-muted-foreground">{field}: </span>
+                              <span className="font-mono">{value}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    No test data yet. Click &quot;Generate Data&quot; to create datasets.
+                  </p>
+                )}
               </div>
             </div>
           </DialogContent>

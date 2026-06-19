@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db/client";
 import { projects, sitePages, testCases } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
-import { openrouter, DEFAULT_MODEL } from "@/lib/llm/client";
+import { openrouter } from "@/lib/llm/client";
+import { getActiveModel } from "@/lib/db/settings";
 import { testCaseListJsonSchema, TestCaseListSchema } from "@/lib/llm/schemas";
 import { buildTestCasePrompt } from "@/lib/llm/prompts";
 import { z } from "zod";
@@ -21,7 +22,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
   }
 
-  const { projectId, model = DEFAULT_MODEL } = parsed.data;
+  const { projectId, model: modelOverride } = parsed.data;
+  const model = modelOverride ?? await getActiveModel();
 
   const [project] = await db.select().from(projects).where(eq(projects.id, projectId));
   if (!project) {
@@ -43,7 +45,12 @@ export async function POST(req: Request) {
       forms: (p.forms as never) ?? [],
       interactiveElements: (p.interactiveElements as never) ?? [],
     })),
-    project.scopeNotes
+    project.scopeNotes,
+    {
+      userStory: project.userStory,
+      requirementDoc: project.requirementDoc,
+      apiDoc: project.apiDoc,
+    }
   );
 
   async function callLLM(messages: { role: "system" | "user" | "assistant"; content: string }[]) {

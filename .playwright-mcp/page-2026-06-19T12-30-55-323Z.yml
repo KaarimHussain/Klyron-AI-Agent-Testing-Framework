@@ -1,0 +1,97 @@
+- generic [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e130]:
+    - banner [ref=e133]:
+      - generic [ref=e134]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e135] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e136]
+          - generic [ref=e137]: Klyron | Testing Agent
+        - generic [ref=e138]: /
+        - generic [ref=e140]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: /
+            - img
+          - generic [ref=e142]: Basic Testing
+          - generic [ref=e143]: Ready
+        - generic [ref=e144]:
+          - button "Delete project" [ref=e145]:
+            - img
+          - link "Settings" [ref=e146] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e147]
+            - generic [ref=e150]: Settings
+          - button "Toggle theme" [ref=e151]:
+            - img
+    - main [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - img [ref=e156]
+          - generic [ref=e159]:
+            - paragraph [ref=e160]: "1"
+            - paragraph [ref=e161]: Pages crawled
+        - generic [ref=e619]:
+          - img [ref=e621]
+          - generic [ref=e624]:
+            - paragraph [ref=e625]: "14"
+            - paragraph [ref=e626]: 1 approved
+        - generic [ref=e170]:
+          - img [ref=e172]
+          - generic [ref=e176]:
+            - paragraph [ref=e177]: "9"
+            - paragraph [ref=e178]: Scripts
+      - generic [ref=e179]:
+        - button "Generate Test Cases" [ref=e180]:
+          - img
+          - text: Generate Test Cases
+        - button "Generate All Scripts" [ref=e181]:
+          - img
+          - text: Generate All Scripts
+        - button "Discover Edge Cases" [ref=e182]:
+          - img
+          - text: Discover Edge Cases
+        - button "Download Framework" [ref=e183]:
+          - img
+          - text: Download Framework
+        - button "Scripts only" [ref=e184]:
+          - img
+          - text: Scripts only
+        - button "HTML Report" [ref=e185]:
+          - img
+          - text: HTML Report
+        - button "Excel Report" [ref=e186]:
+          - img
+          - text: Excel Report
+      - generic [ref=e187]:
+        - tablist [ref=e188]:
+          - tab "Site Map 1" [ref=e189]:
+            - img
+            - text: Site Map
+            - generic [ref=e190]: "1"
+          - tab "Test Cases 14" [ref=e191]:
+            - img
+            - text: Test Cases
+            - generic [ref=e192]: "14"
+          - tab "Scripts 9" [ref=e193]:
+            - img
+            - text: Scripts
+            - generic [ref=e194]: "9"
+          - tab "Execution" [active] [selected] [ref=e195]:
+            - img
+            - text: Execution
+        - tabpanel "Execution" [ref=e791]:
+          - generic [ref=e792]:
+            - generic [ref=e793]:
+              - generic [ref=e794]:
+                - img [ref=e795]
+                - heading "Test Execution" [level=3] [ref=e797]
+              - generic [ref=e798]:
+                - combobox [ref=e799]:
+                  - generic: Chrome
+                  - img
+                - button "Run Tests" [ref=e800]:
+                  - img
+                  - text: Run Tests
+            - paragraph [ref=e801]: Run your approved test cases against the live site. Results include screenshots and defect detection.

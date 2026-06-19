@@ -1,0 +1,98 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e164]:
+    - banner [ref=e167]:
+      - generic [ref=e168]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e169] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e170]
+          - generic [ref=e171]: Klyron | Testing Agent
+        - generic [ref=e172]: /
+        - generic [ref=e174]:
+          - link [ref=e175] [cursor=pointer]:
+            - /url: /
+            - img
+          - generic [ref=e176]: E2E Test Project
+          - generic [ref=e177]: Crawled
+        - generic [ref=e178]:
+          - button "Delete project" [ref=e179]:
+            - img
+          - link "Settings" [ref=e180] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e181]
+            - generic [ref=e184]: Settings
+          - button "Toggle theme" [ref=e185]:
+            - img
+    - main [ref=e186]:
+      - generic [ref=e187]:
+        - generic [ref=e188]:
+          - img [ref=e190]
+          - generic [ref=e193]:
+            - paragraph [ref=e194]: "1"
+            - paragraph [ref=e195]: Pages crawled
+        - generic [ref=e196]:
+          - img [ref=e198]
+          - generic [ref=e201]:
+            - paragraph [ref=e202]: "0"
+            - paragraph [ref=e203]: 0 approved
+        - generic [ref=e204]:
+          - img [ref=e206]
+          - generic [ref=e210]:
+            - paragraph [ref=e211]: "0"
+            - paragraph [ref=e212]: Scripts
+      - generic [ref=e213]:
+        - button "Generate Test Cases" [disabled]:
+          - img
+          - text: Generate Test Cases
+        - button "Generate All Scripts" [disabled]:
+          - img
+          - text: Generate All Scripts
+        - button "Discover Edge Cases" [ref=e239]:
+          - img
+          - text: Discover Edge Cases
+      - generic [ref=e214]:
+        - tablist [ref=e215]:
+          - tab "Site Map 1" [selected] [ref=e240]:
+            - img
+            - text: Site Map
+            - generic [ref=e241]: "1"
+          - tab "Test Cases" [ref=e217]:
+            - img
+            - text: Test Cases
+          - tab "Scripts" [ref=e218]:
+            - img
+            - text: Scripts
+          - tab "Execution" [ref=e219]:
+            - img
+            - text: Execution
+        - tabpanel "Site Map 1" [ref=e242]:
+          - generic [ref=e221]:
+            - heading "Browser Crawl" [level=3] [ref=e222]
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - button "Re-Analyze" [ref=e243]:
+                  - img
+                  - text: Re-Analyze
+                - generic [ref=e244]:
+                  - img [ref=e245]
+                  - text: Complete
+              - progressbar [ref=e229]
+              - generic [ref=e231]:
+                - generic [ref=e234]: Starting crawl of www.saucedemo.com…
+                - generic [ref=e237]: Loading https://www.saucedemo.com…
+                - generic [ref=e250]: ✓ Swag Labs (1 forms, 1 elements)
+                - generic [ref=e253]: Crawl complete — captured 1 page.
+                - generic [ref=e256]: Saved 1 pages to the database.
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - heading "Crawled Pages" [level=3] [ref=e259]
+              - generic [ref=e260]: 1 pages
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - paragraph [ref=e264]: Swag Labs
+                - paragraph [ref=e265]: https://www.saucedemo.com/
+              - generic [ref=e266]:
+                - generic [ref=e267]: 1 forms
+                - generic [ref=e268]: 1 elements

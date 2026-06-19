@@ -1,0 +1,434 @@
+- generic:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: Klyron | Testing Agent
+        - generic: /
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - img
+            - generic: Basic Testing
+            - generic: Ready
+        - generic:
+          - button:
+            - img
+          - link:
+            - /url: /settings
+            - img
+            - generic: Settings
+          - button:
+            - img
+    - main:
+      - generic:
+        - generic:
+          - generic:
+            - img
+          - generic:
+            - paragraph: "1"
+            - paragraph: Pages crawled
+        - generic:
+          - generic:
+            - img
+          - generic:
+            - paragraph: "14"
+            - paragraph: 0 approved
+        - generic:
+          - generic:
+            - img
+          - generic:
+            - paragraph: "9"
+            - paragraph: Scripts
+      - generic:
+        - button:
+          - img
+          - text: Generate Test Cases
+        - button:
+          - img
+          - text: Generate All Scripts
+        - button:
+          - img
+          - text: Discover Edge Cases
+        - button:
+          - img
+          - text: Download Framework
+        - button:
+          - img
+          - text: Scripts only
+        - button:
+          - img
+          - text: HTML Report
+        - button:
+          - img
+          - text: Excel Report
+      - generic:
+        - tablist:
+          - tab:
+            - img
+            - text: Site Map
+            - generic: "1"
+          - tab [selected]:
+            - img
+            - text: Test Cases
+            - generic: "14"
+          - tab:
+            - img
+            - text: Scripts
+            - generic: "9"
+          - tab:
+            - img
+            - text: Execution
+        - tabpanel:
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - heading [level=3]: AI Validation
+              - button:
+                - img
+                - text: Validate & Improve
+            - paragraph: Run validation to detect duplicates, coverage gaps, and get improvement suggestions.
+          - generic:
+            - generic:
+              - heading [level=3]: Test Cases
+              - generic:
+                - generic:
+                  - img
+                  - text: 0 approved
+                - generic: 14 draft
+            - generic:
+              - paragraph: Click a title to see details · Click the status pill to approve/draft · Hover a row for actions
+              - generic:
+                - generic:
+                  - table:
+                    - rowgroup:
+                      - row:
+                        - columnheader: Title
+                        - columnheader:
+                          - button:
+                            - text: Module
+                            - img
+                        - columnheader:
+                          - button:
+                            - text: Type
+                            - img
+                        - columnheader:
+                          - button:
+                            - text: Priority
+                            - img
+                        - columnheader: Status
+                        - columnheader: Actions
+                    - rowgroup:
+                      - row:
+                        - cell:
+                          - button: Password field masks input
+                        - cell: Authentication
+                        - cell:
+                          - generic: ui
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login fails with empty username
+                        - cell: Authentication
+                        - cell:
+                          - generic: negative
+                        - cell:
+                          - generic: high
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login with keyboard navigation
+                        - cell: Authentication
+                        - cell:
+                          - generic: functional
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login form fields have proper labels
+                        - cell: Authentication
+                        - cell:
+                          - generic: ui
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login button is disabled when both fields are empty
+                        - cell: Authentication
+                        - cell:
+                          - generic: ui
+                        - cell:
+                          - generic: low
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login fails with empty password
+                        - cell: Authentication
+                        - cell:
+                          - generic: negative
+                        - cell:
+                          - generic: high
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login button has proper hover state
+                        - cell: Authentication
+                        - cell:
+                          - generic: ui
+                        - cell:
+                          - generic: low
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Successful login with valid credentials
+                        - cell: Authentication
+                        - cell:
+                          - generic: functional
+                        - cell:
+                          - generic: high
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login form persists after page refresh
+                        - cell: Authentication
+                        - cell:
+                          - generic: functional
+                        - cell:
+                          - generic: low
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login attempt with maximum length credentials
+                        - cell: Authentication
+                        - cell:
+                          - generic: edge-case
+                        - cell:
+                          - generic: low
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Multiple rapid login attempts
+                        - cell: Authentication
+                        - cell:
+                          - generic: edge-case
+                        - cell:
+                          - generic: low
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login fails with invalid credentials
+                        - cell: Authentication
+                        - cell:
+                          - generic: negative
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login attempt with special characters in credentials
+                        - cell: Authentication
+                        - cell:
+                          - generic: edge-case
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+                      - row:
+                        - cell:
+                          - button: Login form responsive layout
+                        - cell: Authentication
+                        - cell:
+                          - generic: ui
+                        - cell:
+                          - generic: medium
+                        - cell:
+                          - button:
+                            - img
+                            - text: Draft
+                        - cell:
+                          - generic:
+                            - button:
+                              - img
+                            - button:
+                              - img
+                            - button:
+                              - img
+  - dialog "Password field masks input" [active] [ref=e514]:
+    - heading "Password field masks input" [level=2] [ref=e516]
+    - generic [ref=e517]:
+      - generic [ref=e518]:
+        - generic [ref=e519]: ui
+        - generic [ref=e520]: medium
+      - generic [ref=e521]:
+        - paragraph [ref=e522]: Preconditions
+        - paragraph [ref=e523]: User is on login page
+      - generic [ref=e524]:
+        - paragraph [ref=e525]: Steps
+        - list [ref=e526]:
+          - listitem [ref=e527]: Enter text in password field
+      - generic [ref=e528]:
+        - paragraph [ref=e529]: Expected Result
+        - paragraph [ref=e530]: Password characters are masked (displayed as dots or asterisks)
+      - generic [ref=e531]:
+        - generic [ref=e532]:
+          - paragraph [ref=e533]: Test Data
+          - button "Generate Data" [disabled]:
+            - img
+            - text: Generate Data
+        - paragraph [ref=e535]: No test data yet. Click "Generate Data" to create datasets.
+    - button "Close" [ref=e536]:
+      - img
+      - generic [ref=e537]: Close

@@ -1,0 +1,190 @@
+- generic [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e130]:
+    - banner [ref=e133]:
+      - generic [ref=e134]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e135] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e136]
+          - generic [ref=e137]: Klyron | Testing Agent
+        - generic [ref=e138]: /
+        - generic [ref=e140]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: /
+            - img
+          - generic [ref=e142]: Basic Testing
+          - generic [ref=e143]: Ready
+        - generic [ref=e144]:
+          - button "Delete project" [ref=e145]:
+            - img
+          - link "Settings" [ref=e146] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e147]
+            - generic [ref=e150]: Settings
+          - button "Toggle theme" [ref=e151]:
+            - img
+    - main [ref=e152]:
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - img [ref=e156]
+          - generic [ref=e159]:
+            - paragraph [ref=e160]: "1"
+            - paragraph [ref=e161]: Pages crawled
+        - generic [ref=e619]:
+          - img [ref=e621]
+          - generic [ref=e624]:
+            - paragraph [ref=e625]: "14"
+            - paragraph [ref=e626]: 1 approved
+        - generic [ref=e170]:
+          - img [ref=e172]
+          - generic [ref=e176]:
+            - paragraph [ref=e177]: "9"
+            - paragraph [ref=e178]: Scripts
+      - generic [ref=e179]:
+        - button "Generate Test Cases" [ref=e180]:
+          - img
+          - text: Generate Test Cases
+        - button "Generate All Scripts" [ref=e181]:
+          - img
+          - text: Generate All Scripts
+        - button "Discover Edge Cases" [ref=e182]:
+          - img
+          - text: Discover Edge Cases
+        - button "Download Framework" [ref=e183]:
+          - img
+          - text: Download Framework
+        - button "Scripts only" [ref=e184]:
+          - img
+          - text: Scripts only
+        - button "HTML Report" [ref=e185]:
+          - img
+          - text: HTML Report
+        - button "Excel Report" [ref=e186]:
+          - img
+          - text: Excel Report
+      - generic [ref=e187]:
+        - tablist [ref=e188]:
+          - tab "Site Map 1" [ref=e189]:
+            - img
+            - text: Site Map
+            - generic [ref=e190]: "1"
+          - tab "Test Cases 14" [ref=e191]:
+            - img
+            - text: Test Cases
+            - generic [ref=e192]: "14"
+          - tab "Scripts 9" [active] [selected] [ref=e193]:
+            - img
+            - text: Scripts
+            - generic [ref=e194]: "9"
+          - tab "Execution" [ref=e195]:
+            - img
+            - text: Execution
+        - tabpanel "Scripts 9" [ref=e633]:
+          - generic [ref=e634]:
+            - heading "Automation Scripts" [level=3] [ref=e636]
+            - generic [ref=e638]:
+              - button "Download All (.zip)" [ref=e640]:
+                - img
+                - text: Download All (.zip)
+              - generic [ref=e641]:
+                - generic [ref=e642]:
+                  - generic [ref=e643]:
+                    - img [ref=e644]
+                    - generic [ref=e649]:
+                      - paragraph [ref=e650]: password-field-masks-input.spec.js
+                      - paragraph [ref=e651]: Password field masks input
+                  - generic [ref=e652]:
+                    - generic [ref=e653]: deepseek-chat
+                    - button "Download file" [ref=e654]:
+                      - img
+                    - button "View" [ref=e655]
+                - generic [ref=e656]:
+                  - generic [ref=e657]:
+                    - img [ref=e658]
+                    - generic [ref=e663]:
+                      - paragraph [ref=e664]: login-fails-with-empty-username.spec.js
+                      - paragraph [ref=e665]: Login fails with empty username
+                  - generic [ref=e666]:
+                    - generic [ref=e667]: deepseek-chat
+                    - button "Download file" [ref=e668]:
+                      - img
+                    - button "View" [ref=e669]
+                - generic [ref=e670]:
+                  - generic [ref=e671]:
+                    - img [ref=e672]
+                    - generic [ref=e677]:
+                      - paragraph [ref=e678]: login-button-disabled-empty-fields.spec.js
+                      - paragraph [ref=e679]: Login button is disabled when both fields are empty
+                  - generic [ref=e680]:
+                    - generic [ref=e681]: deepseek-chat
+                    - button "Download file" [ref=e682]:
+                      - img
+                    - button "View" [ref=e683]
+                - generic [ref=e684]:
+                  - generic [ref=e685]:
+                    - img [ref=e686]
+                    - generic [ref=e691]:
+                      - paragraph [ref=e692]: successful-login.spec.js
+                      - paragraph [ref=e693]: Successful login with valid credentials
+                  - generic [ref=e694]:
+                    - generic [ref=e695]: deepseek-chat
+                    - button "Download file" [ref=e696]:
+                      - img
+                    - button "View" [ref=e697]
+                - generic [ref=e698]:
+                  - generic [ref=e699]:
+                    - img [ref=e700]
+                    - generic [ref=e705]:
+                      - paragraph [ref=e706]: login-form-persistence.spec.js
+                      - paragraph [ref=e707]: Login form persists after page refresh
+                  - generic [ref=e708]:
+                    - generic [ref=e709]: deepseek-chat
+                    - button "Download file" [ref=e710]:
+                      - img
+                    - button "View" [ref=e711]
+                - generic [ref=e712]:
+                  - generic [ref=e713]:
+                    - img [ref=e714]
+                    - generic [ref=e719]:
+                      - paragraph [ref=e720]: login-max-length-credentials.spec.js
+                      - paragraph [ref=e721]: Login attempt with maximum length credentials
+                  - generic [ref=e722]:
+                    - generic [ref=e723]: deepseek-chat
+                    - button "Download file" [ref=e724]:
+                      - img
+                    - button "View" [ref=e725]
+                - generic [ref=e726]:
+                  - generic [ref=e727]:
+                    - img [ref=e728]
+                    - generic [ref=e733]:
+                      - paragraph [ref=e734]: multiple-rapid-login-attempts.spec.js
+                      - paragraph [ref=e735]: Multiple rapid login attempts
+                  - generic [ref=e736]:
+                    - generic [ref=e737]: deepseek-chat
+                    - button "Download file" [ref=e738]:
+                      - img
+                    - button "View" [ref=e739]
+                - generic [ref=e740]:
+                  - generic [ref=e741]:
+                    - img [ref=e742]
+                    - generic [ref=e747]:
+                      - paragraph [ref=e748]: login-with-special-chars.spec.js
+                      - paragraph [ref=e749]: Login attempt with special characters in credentials
+                  - generic [ref=e750]:
+                    - generic [ref=e751]: deepseek-chat
+                    - button "Download file" [ref=e752]:
+                      - img
+                    - button "View" [ref=e753]
+                - generic [ref=e754]:
+                  - generic [ref=e755]:
+                    - img [ref=e756]
+                    - generic [ref=e761]:
+                      - paragraph [ref=e762]: login-form-responsive-layout.spec.js
+                      - paragraph [ref=e763]: Login form responsive layout
+                  - generic [ref=e764]:
+                    - generic [ref=e765]: deepseek-chat
+                    - button "Download file" [ref=e766]:
+                      - img
+                    - button "View" [ref=e767]

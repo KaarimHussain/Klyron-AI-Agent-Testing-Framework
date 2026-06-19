@@ -12,7 +12,7 @@ import { TestCaseTable } from "@/components/testforge/testcase-table";
 import { ScriptViewer } from "@/components/testforge/script-viewer";
 import {
   ArrowLeft, Loader2, Sparkles, Code2, Globe, Trash2,
-  FileText, CheckCircle2, AlertCircle, Download, TriangleAlert,
+  FileText, CheckCircle2, AlertCircle, Download, TriangleAlert, ShieldAlert, Play, BarChart2,
 } from "lucide-react";
 import {
   AlertDialog,
@@ -26,6 +26,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { cn } from "@/lib/utils";
+import { ValidationPanel } from "@/components/testforge/validation-panel";
+import { ExecutionPanel } from "@/components/testforge/execution-panel";
 import type { Project, SitePage, TestCase, AutomationScript } from "@/lib/db/schema";
 
 interface ProjectData extends Project {
@@ -52,6 +54,8 @@ export default function ProjectPage() {
   const [generatingTestCases, setGeneratingTestCases] = useState(false);
   const [generatingIds, setGeneratingIds] = useState<Set<string>>(new Set());
   const [generatingAll, setGeneratingAll] = useState(false);
+  const [generatingDataIds, setGeneratingDataIds] = useState<Set<string>>(new Set());
+  const [generatingEdgeCases, setGeneratingEdgeCases] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [scriptFailures, setScriptFailures] = useState<{ title: string; error: string }[]>([]);
@@ -206,6 +210,49 @@ export default function ProjectPage() {
     }
   }
 
+  async function generateEdgeCases() {
+    setGeneratingEdgeCases(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/generate-edgecases", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ projectId: id }),
+      });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error ?? "Edge case generation failed");
+      setData((prev) =>
+        prev ? { ...prev, testCases: [...prev.testCases, ...d.testCases] } : prev
+      );
+      setActiveTab("testcases");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setGeneratingEdgeCases(false);
+    }
+  }
+
+  async function generateTestData(tc: import("@/lib/db/schema").TestCase) {
+    setGeneratingDataIds((prev) => new Set(prev).add(tc.id));
+    try {
+      const res = await fetch("/api/generate-testdata", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ testCaseId: tc.id }),
+      });
+      if (res.ok) {
+        const { testData } = await res.json();
+        setData((prev) =>
+          prev
+            ? { ...prev, testCases: prev.testCases.map((t) => t.id === tc.id ? { ...t, testData } : t) }
+            : prev
+        );
+      }
+    } finally {
+      setGeneratingDataIds((prev) => { const n = new Set(prev); n.delete(tc.id); return n; });
+    }
+  }
+
   async function deleteProject() {
     setDeleting(true);
     await fetch(`/api/projects/${id}`, { method: "DELETE" });
@@ -346,16 +393,61 @@ export default function ProjectPage() {
               : <Code2 className="h-3.5 w-3.5" />}
             Generate All Scripts
           </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={generateEdgeCases}
+            disabled={!hasCrawled || generatingEdgeCases}
+            className="h-8 text-xs gap-1.5"
+          >
+            {generatingEdgeCases
+              ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              : <ShieldAlert className="h-3.5 w-3.5" />}
+            Discover Edge Cases
+          </Button>
           {hasScripts && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="h-8 text-xs gap-1.5"
-              onClick={() => (window.location.href = `/api/export/${id}`)}
-            >
-              <Download className="h-3.5 w-3.5" />
-              Download .zip
-            </Button>
+            <>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 text-xs gap-1.5"
+                onClick={() => (window.location.href = `/api/export/${id}?mode=framework`)}
+              >
+                <Download className="h-3.5 w-3.5" />
+                Download Framework
+              </Button>
+              <Button
+                size="sm"
+                variant="ghost"
+                className="h-8 text-xs gap-1.5 text-muted-foreground"
+                onClick={() => (window.location.href = `/api/export/${id}?mode=flat`)}
+              >
+                <Download className="h-3.5 w-3.5" />
+                Scripts only
+              </Button>
+            </>
+          )}
+          {hasTestCases && (
+            <>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 text-xs gap-1.5"
+                onClick={() => window.open(`/api/report/${id}?format=html`, "_blank")}
+              >
+                <BarChart2 className="h-3.5 w-3.5" />
+                HTML Report
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 text-xs gap-1.5"
+                onClick={() => (window.location.href = `/api/report/${id}?format=excel`)}
+              >
+                <BarChart2 className="h-3.5 w-3.5" />
+                Excel Report
+              </Button>
+            </>
           )}
         </div>
 
@@ -409,6 +501,10 @@ export default function ProjectPage() {
                 </span>
               )}
             </TabsTrigger>
+            <TabsTrigger value="execution" className="gap-1.5 text-xs px-3">
+              <Play className="h-3.5 w-3.5" />
+              Execution
+            </TabsTrigger>
           </TabsList>
 
           {/* Site Map tab */}
@@ -445,7 +541,21 @@ export default function ProjectPage() {
           </TabsContent>
 
           {/* Test Cases tab */}
-          <TabsContent value="testcases" className="mt-4">
+          <TabsContent value="testcases" className="mt-4 space-y-4">
+            <ValidationPanel
+              projectId={id}
+              hasTestCases={hasTestCases}
+              onDeleteIds={async (ids) => {
+                await fetch("/api/testcases/bulk-delete", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ ids }),
+                });
+                setData((prev) =>
+                  prev ? { ...prev, testCases: prev.testCases.filter((t) => !ids.includes(t.id)) } : prev
+                );
+              }}
+            />
             <div className="rounded-xl border bg-card">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b px-4 py-3">
                 <h3 className="text-sm font-semibold">Test Cases</h3>
@@ -480,12 +590,15 @@ export default function ProjectPage() {
                   }
                   onGenerateScript={generateScript}
                   generatingIds={generatingIds}
+                  onGenerateTestData={generateTestData}
+                  generatingDataIds={generatingDataIds}
                 />
               </div>
             </div>
           </TabsContent>
 
           {/* Scripts tab */}
+
           <TabsContent value="scripts" className="mt-4">
             <div className="rounded-xl border bg-card">
               <div className="border-b px-4 py-3">
@@ -499,6 +612,13 @@ export default function ProjectPage() {
                 />
               </div>
             </div>
+          </TabsContent>
+          {/* Execution tab */}
+          <TabsContent value="execution" className="mt-4">
+            <ExecutionPanel
+              projectId={id}
+              hasApprovedCases={approvedCount > 0}
+            />
           </TabsContent>
         </Tabs>
       </main>

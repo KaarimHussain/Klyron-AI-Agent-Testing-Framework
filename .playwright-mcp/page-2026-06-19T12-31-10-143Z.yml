@@ -1,0 +1,23 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e802]:
+    - banner [ref=e803]:
+      - generic [ref=e804]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e805] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e806]
+          - generic [ref=e807]: Klyron | Testing Agent
+        - generic [ref=e808]:
+          - link "Settings" [ref=e809] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e810]
+            - generic [ref=e813]: Settings
+          - button "Toggle theme" [ref=e814]:
+            - img
+    - main [ref=e815]:
+      - generic [ref=e816]:
+        - heading "Settings" [level=1] [ref=e817]
+        - paragraph [ref=e818]: Configure Klyron's AI model. The selected model is used for test case and script generation.
+      - generic [ref=e819]: Loading settings…

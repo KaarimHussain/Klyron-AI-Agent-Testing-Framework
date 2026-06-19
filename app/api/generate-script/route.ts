@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db/client";
 import { projects, sitePages, testCases, automationScripts } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
-import { openrouter, DEFAULT_MODEL } from "@/lib/llm/client";
+import { openrouter } from "@/lib/llm/client";
+import { getActiveModel } from "@/lib/db/settings";
 import { scriptOutputJsonSchema, ScriptOutputSchema } from "@/lib/llm/schemas";
 import { buildScriptPrompt } from "@/lib/llm/prompts";
 import { z } from "zod";
@@ -21,7 +22,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
   }
 
-  const { testCaseId, model = DEFAULT_MODEL } = parsed.data;
+  const { testCaseId, model: modelOverride } = parsed.data;
+  const model = modelOverride ?? await getActiveModel();
 
   const [tc] = await db.select().from(testCases).where(eq(testCases.id, testCaseId));
   if (!tc) {

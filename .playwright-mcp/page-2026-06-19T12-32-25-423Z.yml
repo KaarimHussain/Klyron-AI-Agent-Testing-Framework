@@ -1,0 +1,330 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e124] [cursor=pointer]:
+    - img [ref=e125]
+  - alert [ref=e129]
+  - generic [ref=e802]:
+    - banner [ref=e803]:
+      - generic [ref=e804]:
+        - link "Klyron logo Klyron | Testing Agent" [ref=e805] [cursor=pointer]:
+          - /url: /
+          - img "Klyron logo" [ref=e806]
+          - generic [ref=e807]: Klyron | Testing Agent
+        - generic [ref=e808]:
+          - link "Settings" [ref=e809] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e810]
+            - generic [ref=e813]: Settings
+          - button "Toggle theme" [ref=e814]:
+            - img
+    - main [ref=e815]:
+      - generic [ref=e816]:
+        - heading "Settings" [level=1] [ref=e817]
+        - paragraph [ref=e818]: Configure Klyron's AI model. The selected model is used for test case and script generation.
+      - generic [ref=e819]:
+        - generic [ref=e820]:
+          - generic [ref=e821]:
+            - img [ref=e822]
+            - heading "Top Picks" [level=2] [ref=e824]
+            - generic [ref=e825]: Recommended for Klyron
+          - generic [ref=e826]:
+            - 'button "DeepSeek DeepSeek V3 Best value for structured output. Default model. Excellent JSON generation at very low cost. JSON Schema * Tool Calling Fast Cheap Context: 128k $0.27 / 1M tokens" [ref=e827]':
+              - generic [ref=e832]: DeepSeek
+              - paragraph [ref=e833]: DeepSeek V3
+              - paragraph [ref=e834]: Best value for structured output. Default model. Excellent JSON generation at very low cost.
+              - generic [ref=e835]:
+                - generic "Structured JSON output — required for test case generation" [ref=e836]:
+                  - img [ref=e837]
+                  - text: JSON Schema
+                  - generic [ref=e842]: "*"
+                - generic "Function/tool calling support" [ref=e843]:
+                  - img [ref=e844]
+                  - text: Tool Calling
+                - generic "Low latency inference" [ref=e846]:
+                  - img [ref=e847]
+                  - text: Fast
+                - generic "Cost-effective — under $1 / 1M tokens" [ref=e849]:
+                  - img [ref=e850]
+                  - text: Cheap
+              - generic [ref=e852]:
+                - generic [ref=e853]: "Context: 128k"
+                - generic [ref=e854]: $0.27 / 1M tokens
+            - 'button "Anthropic Claude Sonnet 4.5 Strongest reasoning and instruction following. Best for complex multi-step test scenarios. JSON Schema * Tool Calling Vision Context: 200k $3.00 / 1M tokens" [ref=e855]':
+              - img [ref=e1181]
+              - generic [ref=e857]: Anthropic
+              - paragraph [ref=e858]: Claude Sonnet 4.5
+              - paragraph [ref=e859]: Strongest reasoning and instruction following. Best for complex multi-step test scenarios.
+              - generic [ref=e860]:
+                - generic "Structured JSON output — required for test case generation" [ref=e861]:
+                  - img [ref=e862]
+                  - text: JSON Schema
+                  - generic [ref=e867]: "*"
+                - generic "Function/tool calling support" [ref=e868]:
+                  - img [ref=e869]
+                  - text: Tool Calling
+                - generic "Image and screenshot input" [ref=e871]:
+                  - img [ref=e872]
+                  - text: Vision
+              - generic [ref=e875]:
+                - generic [ref=e876]: "Context: 200k"
+                - generic [ref=e877]: $3.00 / 1M tokens
+            - 'button "OpenAI GPT-4o Most widely tested with JSON Schema format. Highly reliable structured output and tool calling. JSON Schema * Tool Calling Vision Context: 128k $2.50 / 1M tokens" [ref=e878]':
+              - generic [ref=e880]: OpenAI
+              - paragraph [ref=e881]: GPT-4o
+              - paragraph [ref=e882]: Most widely tested with JSON Schema format. Highly reliable structured output and tool calling.
+              - generic [ref=e883]:
+                - generic "Structured JSON output — required for test case generation" [ref=e884]:
+                  - img [ref=e885]
+                  - text: JSON Schema
+                  - generic [ref=e890]: "*"
+                - generic "Function/tool calling support" [ref=e891]:
+                  - img [ref=e892]
+                  - text: Tool Calling
+                - generic "Image and screenshot input" [ref=e894]:
+                  - img [ref=e895]
+                  - text: Vision
+              - generic [ref=e898]:
+                - generic [ref=e899]: "Context: 128k"
+                - generic [ref=e900]: $2.50 / 1M tokens
+        - generic [ref=e901]:
+          - heading "All Available Models" [level=2] [ref=e902]
+          - table [ref=e904]:
+            - rowgroup [ref=e905]:
+              - row "Model Provider Capabilities Context Cost" [ref=e906]:
+                - columnheader "Model" [ref=e907]
+                - columnheader "Provider" [ref=e908]
+                - columnheader "Capabilities" [ref=e909]
+                - columnheader "Context" [ref=e910]
+                - columnheader "Cost" [ref=e911]
+                - columnheader [ref=e912]
+            - rowgroup [ref=e913]:
+              - row "DeepSeek V3 Best value for structured output. Default model. Excellent JSON generation at very low cost. DeepSeek JSON Schema * Tool Calling Fast Cheap 128k $0.27 / 1M Select" [ref=e1183]:
+                - cell "DeepSeek V3 Best value for structured output. Default model. Excellent JSON generation at very low cost." [ref=e915]:
+                  - generic [ref=e916]: DeepSeek V3
+                  - generic [ref=e917]: Best value for structured output. Default model. Excellent JSON generation at very low cost.
+                - cell "DeepSeek" [ref=e918]
+                - cell "JSON Schema * Tool Calling Fast Cheap" [ref=e919]:
+                  - generic [ref=e920]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e921]:
+                      - img [ref=e922]
+                      - text: JSON Schema
+                      - generic [ref=e927]: "*"
+                    - generic "Function/tool calling support" [ref=e928]:
+                      - img [ref=e929]
+                      - text: Tool Calling
+                    - generic "Low latency inference" [ref=e931]:
+                      - img [ref=e932]
+                      - text: Fast
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e934]:
+                      - img [ref=e935]
+                      - text: Cheap
+                - cell "128k" [ref=e937]
+                - cell "$0.27 / 1M" [ref=e938]
+                - cell "Select" [ref=e1184]:
+                  - button "Select" [ref=e1185]
+              - row "Claude Sonnet 4.5 Strongest reasoning and instruction following. Best for complex multi-step test scenarios. Anthropic JSON Schema * Tool Calling Vision 200k $3.00 / 1M Active" [ref=e1186]:
+                - cell "Claude Sonnet 4.5 Strongest reasoning and instruction following. Best for complex multi-step test scenarios." [ref=e944]:
+                  - generic [ref=e945]: Claude Sonnet 4.5
+                  - generic [ref=e946]: Strongest reasoning and instruction following. Best for complex multi-step test scenarios.
+                - cell "Anthropic" [ref=e947]
+                - cell "JSON Schema * Tool Calling Vision" [ref=e948]:
+                  - generic [ref=e949]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e950]:
+                      - img [ref=e951]
+                      - text: JSON Schema
+                      - generic [ref=e956]: "*"
+                    - generic "Function/tool calling support" [ref=e957]:
+                      - img [ref=e958]
+                      - text: Tool Calling
+                    - generic "Image and screenshot input" [ref=e960]:
+                      - img [ref=e961]
+                      - text: Vision
+                - cell "200k" [ref=e964]
+                - cell "$3.00 / 1M" [ref=e965]
+                - cell "Active" [ref=e1187]:
+                  - generic [ref=e1188]:
+                    - img [ref=e1189]
+                    - text: Active
+              - row "GPT-4o Most widely tested with JSON Schema format. Highly reliable structured output and tool calling. OpenAI JSON Schema * Tool Calling Vision 128k $2.50 / 1M Select" [ref=e968]:
+                - cell "GPT-4o Most widely tested with JSON Schema format. Highly reliable structured output and tool calling." [ref=e969]:
+                  - generic [ref=e970]: GPT-4o
+                  - generic [ref=e971]: Most widely tested with JSON Schema format. Highly reliable structured output and tool calling.
+                - cell "OpenAI" [ref=e972]
+                - cell "JSON Schema * Tool Calling Vision" [ref=e973]:
+                  - generic [ref=e974]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e975]:
+                      - img [ref=e976]
+                      - text: JSON Schema
+                      - generic [ref=e981]: "*"
+                    - generic "Function/tool calling support" [ref=e982]:
+                      - img [ref=e983]
+                      - text: Tool Calling
+                    - generic "Image and screenshot input" [ref=e985]:
+                      - img [ref=e986]
+                      - text: Vision
+                - cell "128k" [ref=e989]
+                - cell "$2.50 / 1M" [ref=e990]
+                - cell "Select" [ref=e991]:
+                  - button "Select" [ref=e992]
+              - row "GPT-4o Mini Cheaper and faster GPT-4o. Good for simple or repetitive test case generation. OpenAI JSON Schema * Tool Calling Vision Fast Cheap 128k $0.15 / 1M Select" [ref=e993]:
+                - cell "GPT-4o Mini Cheaper and faster GPT-4o. Good for simple or repetitive test case generation." [ref=e994]:
+                  - generic [ref=e995]: GPT-4o Mini
+                  - generic [ref=e996]: Cheaper and faster GPT-4o. Good for simple or repetitive test case generation.
+                - cell "OpenAI" [ref=e997]
+                - cell "JSON Schema * Tool Calling Vision Fast Cheap" [ref=e998]:
+                  - generic [ref=e999]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1000]:
+                      - img [ref=e1001]
+                      - text: JSON Schema
+                      - generic [ref=e1006]: "*"
+                    - generic "Function/tool calling support" [ref=e1007]:
+                      - img [ref=e1008]
+                      - text: Tool Calling
+                    - generic "Image and screenshot input" [ref=e1010]:
+                      - img [ref=e1011]
+                      - text: Vision
+                    - generic "Low latency inference" [ref=e1014]:
+                      - img [ref=e1015]
+                      - text: Fast
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e1017]:
+                      - img [ref=e1018]
+                      - text: Cheap
+                - cell "128k" [ref=e1020]
+                - cell "$0.15 / 1M" [ref=e1021]
+                - cell "Select" [ref=e1022]:
+                  - button "Select" [ref=e1023]
+              - row "Claude Haiku 4.5 Fastest and cheapest Claude model. Ideal for rapid bulk script generation. Anthropic JSON Schema * Tool Calling Fast Cheap 200k $0.80 / 1M Select" [ref=e1024]:
+                - cell "Claude Haiku 4.5 Fastest and cheapest Claude model. Ideal for rapid bulk script generation." [ref=e1025]:
+                  - generic [ref=e1026]: Claude Haiku 4.5
+                  - generic [ref=e1027]: Fastest and cheapest Claude model. Ideal for rapid bulk script generation.
+                - cell "Anthropic" [ref=e1028]
+                - cell "JSON Schema * Tool Calling Fast Cheap" [ref=e1029]:
+                  - generic [ref=e1030]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1031]:
+                      - img [ref=e1032]
+                      - text: JSON Schema
+                      - generic [ref=e1037]: "*"
+                    - generic "Function/tool calling support" [ref=e1038]:
+                      - img [ref=e1039]
+                      - text: Tool Calling
+                    - generic "Low latency inference" [ref=e1041]:
+                      - img [ref=e1042]
+                      - text: Fast
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e1044]:
+                      - img [ref=e1045]
+                      - text: Cheap
+                - cell "200k" [ref=e1047]
+                - cell "$0.80 / 1M" [ref=e1048]
+                - cell "Select" [ref=e1049]:
+                  - button "Select" [ref=e1050]
+              - row "Gemini 2.0 Flash Fast Google model with a massive context window. Handles large site crawls well. Google JSON Schema * Tool Calling Vision Fast Cheap 1M $0.10 / 1M Select" [ref=e1051]:
+                - cell "Gemini 2.0 Flash Fast Google model with a massive context window. Handles large site crawls well." [ref=e1052]:
+                  - generic [ref=e1053]: Gemini 2.0 Flash
+                  - generic [ref=e1054]: Fast Google model with a massive context window. Handles large site crawls well.
+                - cell "Google" [ref=e1055]
+                - cell "JSON Schema * Tool Calling Vision Fast Cheap" [ref=e1056]:
+                  - generic [ref=e1057]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1058]:
+                      - img [ref=e1059]
+                      - text: JSON Schema
+                      - generic [ref=e1064]: "*"
+                    - generic "Function/tool calling support" [ref=e1065]:
+                      - img [ref=e1066]
+                      - text: Tool Calling
+                    - generic "Image and screenshot input" [ref=e1068]:
+                      - img [ref=e1069]
+                      - text: Vision
+                    - generic "Low latency inference" [ref=e1072]:
+                      - img [ref=e1073]
+                      - text: Fast
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e1075]:
+                      - img [ref=e1076]
+                      - text: Cheap
+                - cell "1M" [ref=e1078]
+                - cell "$0.10 / 1M" [ref=e1079]
+                - cell "Select" [ref=e1080]:
+                  - button "Select" [ref=e1081]
+              - row "Gemini 1.5 Pro Enormous context window — ideal for sites with hundreds of pages in a single prompt. Google JSON Schema * Tool Calling Vision 2M $1.25 / 1M Select" [ref=e1082]:
+                - cell "Gemini 1.5 Pro Enormous context window — ideal for sites with hundreds of pages in a single prompt." [ref=e1083]:
+                  - generic [ref=e1084]: Gemini 1.5 Pro
+                  - generic [ref=e1085]: Enormous context window — ideal for sites with hundreds of pages in a single prompt.
+                - cell "Google" [ref=e1086]
+                - cell "JSON Schema * Tool Calling Vision" [ref=e1087]:
+                  - generic [ref=e1088]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1089]:
+                      - img [ref=e1090]
+                      - text: JSON Schema
+                      - generic [ref=e1095]: "*"
+                    - generic "Function/tool calling support" [ref=e1096]:
+                      - img [ref=e1097]
+                      - text: Tool Calling
+                    - generic "Image and screenshot input" [ref=e1099]:
+                      - img [ref=e1100]
+                      - text: Vision
+                - cell "2M" [ref=e1103]
+                - cell "$1.25 / 1M" [ref=e1104]
+                - cell "Select" [ref=e1105]:
+                  - button "Select" [ref=e1106]
+              - row "Llama 3.3 70B Open-source model with solid JSON output and tool calling support. Meta JSON Schema * Tool Calling Cheap 128k $0.12 / 1M Select" [ref=e1107]:
+                - cell "Llama 3.3 70B Open-source model with solid JSON output and tool calling support." [ref=e1108]:
+                  - generic [ref=e1109]: Llama 3.3 70B
+                  - generic [ref=e1110]: Open-source model with solid JSON output and tool calling support.
+                - cell "Meta" [ref=e1111]
+                - cell "JSON Schema * Tool Calling Cheap" [ref=e1112]:
+                  - generic [ref=e1113]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1114]:
+                      - img [ref=e1115]
+                      - text: JSON Schema
+                      - generic [ref=e1120]: "*"
+                    - generic "Function/tool calling support" [ref=e1121]:
+                      - img [ref=e1122]
+                      - text: Tool Calling
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e1124]:
+                      - img [ref=e1125]
+                      - text: Cheap
+                - cell "128k" [ref=e1127]
+                - cell "$0.12 / 1M" [ref=e1128]
+                - cell "Select" [ref=e1129]:
+                  - button "Select" [ref=e1130]
+              - row "Mistral Large EU-based model with strong reasoning. Good alternative to GPT-4o for privacy-conscious use. Mistral AI JSON Schema * Tool Calling 128k $2.00 / 1M Select" [ref=e1131]:
+                - cell "Mistral Large EU-based model with strong reasoning. Good alternative to GPT-4o for privacy-conscious use." [ref=e1132]:
+                  - generic [ref=e1133]: Mistral Large
+                  - generic [ref=e1134]: EU-based model with strong reasoning. Good alternative to GPT-4o for privacy-conscious use.
+                - cell "Mistral AI" [ref=e1135]
+                - cell "JSON Schema * Tool Calling" [ref=e1136]:
+                  - generic [ref=e1137]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1138]:
+                      - img [ref=e1139]
+                      - text: JSON Schema
+                      - generic [ref=e1144]: "*"
+                    - generic "Function/tool calling support" [ref=e1145]:
+                      - img [ref=e1146]
+                      - text: Tool Calling
+                - cell "128k" [ref=e1148]
+                - cell "$2.00 / 1M" [ref=e1149]
+                - cell "Select" [ref=e1150]:
+                  - button "Select" [ref=e1151]
+              - row "Qwen 2.5 72B Strong code and structured output generation. Very cost-effective open model. Alibaba JSON Schema * Tool Calling Cheap 128k $0.35 / 1M Select" [ref=e1152]:
+                - cell "Qwen 2.5 72B Strong code and structured output generation. Very cost-effective open model." [ref=e1153]:
+                  - generic [ref=e1154]: Qwen 2.5 72B
+                  - generic [ref=e1155]: Strong code and structured output generation. Very cost-effective open model.
+                - cell "Alibaba" [ref=e1156]
+                - cell "JSON Schema * Tool Calling Cheap" [ref=e1157]:
+                  - generic [ref=e1158]:
+                    - generic "Structured JSON output — required for test case generation" [ref=e1159]:
+                      - img [ref=e1160]
+                      - text: JSON Schema
+                      - generic [ref=e1165]: "*"
+                    - generic "Function/tool calling support" [ref=e1166]:
+                      - img [ref=e1167]
+                      - text: Tool Calling
+                    - generic "Cost-effective — under $1 / 1M tokens" [ref=e1169]:
+                      - img [ref=e1170]
+                      - text: Cheap
+                - cell "128k" [ref=e1172]
+                - cell "$0.35 / 1M" [ref=e1173]
+                - cell "Select" [ref=e1174]:
+                  - button "Select" [ref=e1175]
+          - paragraph [ref=e1176]: JSON Schema* is required for Klyron to generate structured test cases. All listed models support it via OpenRouter.
+        - generic [ref=e1177]:
+          - generic [ref=e1178]: "Active model: Claude Sonnet 4.5"
+          - button "Saved!" [ref=e1191]

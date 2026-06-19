@@ -64,6 +64,10 @@ export async function POST(req: Request) {
           maxPages,
           maxDepth,
           onProgress: send,
+          credentials:
+            project.loginUsername && project.loginPassword
+              ? { username: project.loginUsername, password: project.loginPassword }
+              : undefined,
         });
 
         // Persist — replace any previous crawl data
